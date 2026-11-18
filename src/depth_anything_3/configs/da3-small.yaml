@@ -18,8 +18,8 @@ net:
 
 head:
   __object__:
-    path: depth_anything_3.model.dualdpt
-    name: DualDPT
+    path: depth_anything_3.model.dpt
+    name: DPT
     args: as_params
 
   dim_in: &head_dim_in 768
@@ -35,11 +35,3 @@ cam_enc:
     args: as_params
 
   dim_out: 384
-
-cam_dec:
-  __object__:
-    path: depth_anything_3.model.cam_dec
-    name: CameraDec
-    args: as_params
-
-  dim_in: 768

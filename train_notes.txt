@@ -1,0 +1,18 @@
+
+- [DONE] make it able to start from a give checkpoint
+- [DONE] there are still some outliersin test dataset.. find them and filter them
+- [DONE] for the moment, do not schedule the learning rate (lets see how far it can learn before oscillating)
+
+- check how loss is defined in the paper, my loss might be not so good
+- check if the removal of the outptu camera is properly done
+- check the attention maps
+- maybe more pair_views could help
+- maybe change to da3-large (or giant)
+- should eventually do an ablation test with:
+	- wrong cameras (for example all identity 0,0,0)
+	- no cameras at all
+- add sun tokens
+- test monochorme
+- test dinov3
+- test with NIR
+-

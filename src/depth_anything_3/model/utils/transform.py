@@ -33,7 +33,9 @@ def extri_intri_to_pose_encoding(
     H, W = image_size_hw
     fov_h = 2 * torch.atan((H / 2) / intrinsics[..., 1, 1])
     fov_w = 2 * torch.atan((W / 2) / intrinsics[..., 0, 0])
-    pose_encoding = torch.cat([T, quat, fov_h[..., None], fov_w[..., None]], dim=-1).float()
+    pp_x = intrinsics[..., 0, 2] / W
+    pp_y = intrinsics[..., 1, 2] / H
+    pose_encoding = torch.cat([T, quat, fov_h[..., None], fov_w[..., None], pp_x[..., None], pp_y[..., None]], dim=-1).float()
 
     return pose_encoding
 

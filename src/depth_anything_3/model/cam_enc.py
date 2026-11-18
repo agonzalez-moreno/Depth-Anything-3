@@ -30,9 +30,9 @@ class CameraEnc(nn.Module):
     def __init__(
         self,
         dim_out: int = 1024,
-        dim_in: int = 9,
+        dim_in: int = 11,
         trunk_depth: int = 4,
-        target_dim: int = 9,
+        target_dim: int = 11,
         num_heads: int = 16,
         mlp_ratio: int = 4,
         init_values: float = 0.01,
@@ -67,9 +67,9 @@ class CameraEnc(nn.Module):
         ixt,
         image_size,
     ) -> tuple:
-        c2ws = affine_inverse(ext)
+        #c2ws = affine_inverse(ext) # Attention! to remove, I already have the extrinsics in c2w
         pose_encoding = extri_intri_to_pose_encoding(
-            c2ws,
+            ext,
             ixt,
             image_size,
         )
